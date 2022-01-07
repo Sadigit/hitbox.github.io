@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			overflow: hidden;
+		}
+		
+	 	img{
+			height: 100vh;
+			position: absolute;
+			
+			left: 0px;
+			bottom: 0px;
+			transform: rotate(0deg);
+		}
+		.plr{
+			position: absolute;
+			bottom: 66px;
+		}
+		.plr img{
+			
+			width: 85px;
+			height: 85px;
+			z-index: 1004;
+		}
+		.kill img{
+			height: 50px;
+			width: 50px;
+			position: absolute;
+			left: 77%;
+			bottom: 15px;
+		}
+		.enemy img{
+			width: 75px;
+			height: 75px;
+			position: absolute;
+			bottom: 66px;
+			left: 88%;
+			animation: goleft;
+			animation-duration: 17s ;
+			animation-iteration-count: infinite;
+
+		}
+		@keyframes goleft{
+			0%{left: 720px;}
+			100%{left: -75px;}
+		}
+		.bullet{
+			width: 10px;
+			height: 5px;
+			position: absolute;
+			bottom: 90px;
+			left: 40px;
+			background: red;
+			z-index: 1003;
+			
+		}
+		.bullet img{
+			width: 30xp;
+			height: 30xp;
+		}
+		.anima{
+			animation: gobull;
+			animation-duration: 3s;
+		}
+		@keyframes gobull{
+			0%{left: 40px;}
+			100%{left: 850px;}
+		}
+		.jump img{
+			width: 45px;
+			height: 45px;
+			
+			z-index: 1005;
+		}
+		.jump{
+			width: 45px;
+			height: 45px;
+			position: absolute;
+			left: 28px;
+			bottom: 15px;
+			z-index: 1005;
+		}
+		.jmp{
+			animation: goup;
+			animation-duration: 3.5s ;
+		}
+		@keyframes goup{
+			0%{bottom: 66px;}
+			50%{bottom: 181px;}
+			80%{bottom: 100px;}
+			100%{bottom: 66px;}
+		}
+	</style>
+</head>
+<body>
+	
+		<img src="https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2017/02/Make-Sprites-Online-Featured.jpg?q=50&fit=contain&w=750&h=375&dpr=1.5">
+	
+	<div class="plr">
+		<img src="http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e72dcc0b12312e0.png
+">
+	</div>
+	<div class="kill"><img onclick="fire()" src="http://www.clker.com/cliparts/e/B/z/2/8/s/red-snipper-target-md.png"></div>
+
+	<div  onclick="jumping()" class="jump">
+		<img onclick="jumping()" src="https://cdn2.iconfinder.com/data/icons/people-79/100/People-05-512.png">
+	</div>
+	<div class="enemy">
+		<img src="https://www.pinclipart.com/picdir/big/580-5804777_zombies-peashooter-pixel-minecraft-plants-vs-zombies-zombie.png">
+	</div>
+
+	<div class="bullet">
+		
+	</div>
+
+
+
+
+	<script type="text/javascript">
+		function fire(){
+			bull = document.querySelector('.bullet');
+			bull.classList.add("anima");
+			setTimeout(()=>{
+				bull.classList.remove("anima");
+			},800);
+
+		}
+		function jumping(){
+			plr = document.querySelector('.plr');
+			bull = document.querySelector('.bullet');
+			plr.classList.add("jmp");
+			bull.classList.add("jmp");
+			setTimeout(()=>{
+				plr.classList.remove("jmp");
+				bull.classList.remove("jmp");
+			},800);
+		}		
+	</script>
+</body>
+</html>
